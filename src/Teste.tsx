@@ -13,6 +13,10 @@ const Botao = styled.button<BotaoProps>`
 const BotaoPerigo = styled(Botao)`
   background-color: red;
   color: white;
+
+  span {
+    text-decoration: line-through;
+  }
 `
 
 function Teste() {
@@ -20,7 +24,9 @@ function Teste() {
     <>
       <Botao principal>Clique aqui</Botao>
       <Botao principal={false}>Cancelar</Botao>
-      <BotaoPerigo principal>Nao clique aqui</BotaoPerigo>
+      <BotaoPerigo as="a" principal>
+        <span>Nao clique aqui</span>
+      </BotaoPerigo>
     </>
   )
 }
